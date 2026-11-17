@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Arundel Club Leaderboard</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Inter:wght@400;500;600&display=swap">
+<style>
+/* Layout: phone-first staff screen. Month header, podium list, then "how the bonus works" and the economics behind it. */
+:root{
+  --bg:#f3f1ee; --card:#ffffff; --fg:#1f1b1d; --muted:#6d6468; --line:#e4dee0;
+  --grape:#5b2340; --grape-soft:#f1e4ea; --gold:#b9852e; --gold-soft:#f8eedb; --leaf:#3f6b4a; --leaf-soft:#e3efe5;
+  --display:"Bricolage Grotesque", "Inter", system-ui, sans-serif;
+  --body:"Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#171315; --card:#221d20; --fg:#f2ecef; --muted:#ab9ea5; --line:#3a3236;
+  --grape:#e2a3c2; --grape-soft:#3a2230; --gold:#e6b866; --gold-soft:#3a2f1c; --leaf:#8fc79c; --leaf-soft:#1f3326; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#171315; --card:#221d20; --fg:#f2ecef; --muted:#ab9ea5; --line:#3a3236;
+  --grape:#e2a3c2; --grape-soft:#3a2230; --gold:#e6b866; --gold-soft:#3a2f1c; --leaf:#8fc79c; --leaf-soft:#1f3326; color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px;line-height:1.5}
+.wrap{max-width:720px;margin:0 auto;padding-block:20px 48px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:22px}
+.mock{background:var(--gold-soft);color:var(--fg);border:1px dashed var(--gold);border-radius:8px;padding:8px 12px;font-size:13px}
+header{display:grid;gap:4px}
+.eyebrow{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+h1{font-family:var(--display);font-weight:800;font-size:34px;line-height:1.05;margin:0;text-wrap:balance}
+h2{font-family:var(--display);font-weight:600;font-size:21px;margin:0;text-wrap:balance}
+p{margin:0}
+.meta{display:flex;flex-wrap:wrap;gap:8px}
+.chip{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:4px 10px;font-size:13px;color:var(--muted)}
+.chip b{color:var(--fg);font-variant-numeric:tabular-nums}
+.board{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.row{display:grid;grid-template-columns:40px minmax(0,1fr) auto;gap:12px;align-items:center;padding:14px 16px;border-top:1px solid var(--line)}
+.row:first-child{border-top:0}
+.rank{font-family:var(--display);font-weight:800;font-size:22px;color:var(--muted);text-align:center;font-variant-numeric:tabular-nums}
+.who{min-width:0;display:grid;gap:6px}
+.name{font-weight:600;font-size:16px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.tag{font-size:11px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;border-radius:999px;padding:2px 8px}
+.tag.lead{background:var(--gold-soft);color:var(--gold)}
+.tag.q{background:var(--leaf-soft);color:var(--leaf)}
+.bar{height:8px;border-radius:99px;background:var(--grape-soft);overflow:hidden}
+.bar i{display:block;height:100%;background:var(--grape);border-radius:99px}
+.row.top .bar i{background:var(--gold)}
+.row.top .rank{color:var(--gold)}
+.score{text-align:right;display:grid;gap:0}
+.score b{font-family:var(--display);font-weight:800;font-size:26px;font-variant-numeric:tabular-nums;line-height:1}
+.score span{font-size:12px;color:var(--muted)}
+.sub{font-size:12.5px;color:var(--muted)}
+.prize{background:var(--grape);color:#fff;border-radius:12px;padding:16px 18px;display:grid;gap:4px}
+.prize h2{color:#fff}
+.prize p{color:#f6e9ef;font-size:14px}
+:root[data-theme="dark"] .prize, .prize{--x:0}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .prize{background:var(--grape-soft);color:var(--fg)} :root:not([data-theme="light"]) .prize h2{color:var(--fg)} :root:not([data-theme="light"]) .prize p{color:var(--muted)}}
+:root[data-theme="dark"] .prize{background:var(--grape-soft);color:var(--fg)}
+:root[data-theme="dark"] .prize h2{color:var(--fg)}
+:root[data-theme="dark"] .prize p{color:var(--muted)}
+.club{display:grid;gap:8px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px}
+.club .bar{height:12px}
+.club .bar i{background:var(--leaf)}
+.cols{display:flex;justify-content:space-between;gap:12px;font-size:13px;color:var(--muted)}
+section{display:grid;gap:10px}
+ol,ul{margin:0;padding-left:20px;display:grid;gap:6px}
+.tbl{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:12px}
+table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums;min-width:420px}
+th,td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:0}
+th{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600}
+td.n{text-align:right;white-space:nowrap}
+.note{font-size:13px;color:var(--muted)}
+</style>
+</head>
+<body style="margin:0">
+
+<div class="wrap">
+  <div class="mock"><strong>Mockup with sample numbers.</strong> Names are our staff; the sign-up counts are made up to show how it would look.</div>
+
+  <header>
+    <div class="eyebrow">Arundel Wine Club · Staff leaderboard</div>
+    <h1>November sign-ups</h1>
+  </header>
+
+  <div class="meta">
+    <span class="chip">Updated <b>Nov 17, 2:15 pm</b></span>
+    <span class="chip"><b>13</b> days left</span>
+    <span class="chip">Need <b>3</b> sign-ups to qualify</span>
+  </div>
+
+  <div class="board" role="list" aria-label="Sign-ups by bartender">
+    <div class="row top" role="listitem">
+      <div class="rank">1</div>
+      <div class="who"><div class="name">Sherri <span class="tag lead">Tied for 1st</span></div><div class="bar"><i style="width:100%"></i></div><div class="sub">22 QR scans</div></div>
+      <div class="score"><b>7</b><span>sign-ups</span></div>
+    </div>
+    <div class="row top" role="listitem">
+      <div class="rank">1</div>
+      <div class="who"><div class="name">Michelle <span class="tag lead">Tied for 1st</span></div><div class="bar"><i style="width:100%"></i></div><div class="sub">19 QR scans</div></div>
+      <div class="score"><b>7</b><span>sign-ups</span></div>
+    </div>
+    <div class="row" role="listitem">
+      <div class="rank">3</div>
+      <div class="who"><div class="name">Makayla <span class="tag q">Qualified</span></div><div class="bar"><i style="width:57%"></i></div><div class="sub">14 QR scans</div></div>
+      <div class="score"><b>4</b><span>sign-ups</span></div>
+    </div>
+    <div class="row" role="listitem">
+      <div class="rank">4</div>
+      <div class="who"><div class="name">Annyssa</div><div class="bar"><i style="width:29%"></i></div><div class="sub">9 QR scans · 1 more to qualify</div></div>
+      <div class="score"><b>2</b><span>sign-ups</span></div>
+    </div>
+  </div>
+  <p class="note">Only finished sign-ups count. Scans show how many guests opened your link.</p>
+
+  <div class="prize">
+    <h2>This month's bonus: $75</h2>
+    <p>Sherri and Michelle are tied, so right now they would split it: $37.50 each. One more sign-up takes the full $75.</p>
+  </div>
+
+  <div class="club">
+    <h2>Club goal</h2>
+    <div class="bar"><i style="width:20%"></i></div>
+    <div class="cols"><span><b style="color:var(--fg)">20</b> members so far</span><span>Goal: 100 by end of 2027</span></div>
+  </div>
+
+  <section>
+    <h2>How the bonus works</h2>
+    <ol>
+      <li>Hand guests your QR card. When they join from your link, it counts for you.</li>
+      <li>The top bartender each month wins <b>$75</b>. You need at least 3 sign-ups to win.</li>
+      <li>A tie splits the bonus.</li>
+      <li>The winner is checked on the 1st and paid on the next paycheck. It is taxable pay, like any bonus.</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Why it pays for itself</h2>
+    <div class="tbl">
+      <table>
+        <thead><tr><th>Per new member</th><th class="n">Per year</th></tr></thead>
+        <tbody>
+          <tr><td>Wine they buy (4 shipments × about $55)</td><td class="n">$220</td></tr>
+          <tr><td>Our wine cost (about one third, to confirm)</td><td class="n">–$75</td></tr>
+          <tr><td><b>Profit per member</b></td><td class="n"><b>about $145</b></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="tbl">
+      <table>
+        <thead><tr><th>The bonus program</th><th class="n">Per year</th></tr></thead>
+        <tbody>
+          <tr><td>Bonus cost ($75 × 12 months)</td><td class="n">$900</td></tr>
+          <tr><td>New members needed to pay for it</td><td class="n">about 6</td></tr>
+          <tr><td>If staff add 5 members a month (60 a year)</td><td class="n">about $7,800 profit after bonuses</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">Members also bring guests and buy extra bottles on visits, which this does not count. Wine cost per bottle needs to be confirmed with Evan.</p>
+  </section>
+</div>
+</body>
+</html>

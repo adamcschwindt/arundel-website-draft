@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Arundel Food Pricing</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@500;700&family=Inter:wght@400;500;600&display=swap">
+<style>
+/* Layout: single readable column, one-page memo; summary strip, then price table, then specials and next steps */
+:root{
+  --bg:#f7f6f3; --surface:#ffffff; --fg:#22201f; --muted:#615b57; --line:#e2ddd8;
+  --accent:#7a2335; --accent-soft:#f3e6e8; --good:#2f6b46; --good-soft:#e5f0e8; --warn:#8a5a00; --warn-soft:#f8eed9;
+  --display:"Bitter", Georgia, "Times New Roman", serif;
+  --body:"Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#1b1918; --surface:#24211f; --fg:#efebe7; --muted:#a8a09a; --line:#3a3532;
+  --accent:#e08a9a; --accent-soft:#3a2328; --good:#7cc596; --good-soft:#1f3326; --warn:#e2b45a; --warn-soft:#3a2f1a; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#1b1918; --surface:#24211f; --fg:#efebe7; --muted:#a8a09a; --line:#3a3532;
+  --accent:#e08a9a; --accent-soft:#3a2328; --good:#7cc596; --good-soft:#1f3326; --warn:#e2b45a; --warn-soft:#3a2f1a; color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px;line-height:1.55}
+.wrap{max-width:820px;margin:0 auto;padding-block:32px 48px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:28px}
+header{display:grid;gap:6px}
+.eyebrow{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+h1{font-family:var(--display);font-size:32px;line-height:1.15;margin:0;text-wrap:balance}
+h2{font-family:var(--display);font-size:20px;margin:0 0 10px;text-wrap:balance}
+p{margin:0;max-width:66ch}
+.lede{font-size:17px}
+.lede strong{color:var(--accent)}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;display:grid;gap:2px;min-width:0}
+.stat b{font-family:var(--display);font-size:24px;font-variant-numeric:tabular-nums}
+.stat span{font-size:12.5px;color:var(--muted)}
+.stat.now b{color:var(--muted)}
+.stat.new b{color:var(--good)}
+@media (max-width:640px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}h1{font-size:26px}}
+section{display:grid;gap:10px}
+.tbl{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:8px}
+table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums;min-width:460px}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600}
+tr:last-child td{border-bottom:0}
+td.num,th.num{text-align:right;white-space:nowrap}
+td.new{font-weight:600;color:var(--good)}
+tr.key td{background:var(--accent-soft)}
+.note{font-size:13px;color:var(--muted)}
+.callout{background:var(--warn-soft);border-left:4px solid var(--warn);border-radius:6px;padding:14px 16px;display:grid;gap:6px}
+.callout h2{margin:0;font-size:18px}
+ol,ul{margin:0;padding-left:20px;display:grid;gap:6px}
+li{max-width:66ch}
+footer{font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:14px;display:grid;gap:4px}
+</style>
+</head>
+<body style="margin:0">
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Arundel Cellars &amp; Brewing Co. · Board meeting 11/17/26</div>
+    <h1>Raise food prices about 15%</h1>
+    <p class="lede">Move the $15 items to <strong>$17</strong> and raise the rest by a similar amount. This adds about <strong>$28,000–$35,000 profit</strong> for every 10 months of sales.</p>
+  </header>
+
+  <section>
+    <h2>Why we need to do this</h2>
+    <div class="stats">
+      <div class="stat now"><b>60.7%</b><span>Food cost today (% of food sales)</span></div>
+      <div class="stat now"><b>23.4%</b><span>Kitchen labor (% of food sales)</span></div>
+      <div class="stat now"><b>$36.6K</b><span>Left from $230.7K food sales, Jan–Oct</span></div>
+      <div class="stat new"><b>52.7%</b><span>Food cost after the raise</span></div>
+    </div>
+    <p>Food plus kitchen labor uses about 84 cents of every food dollar. A normal target for food cost alone is 30–35%. Our prices have not kept up with our costs.</p>
+  </section>
+
+  <section>
+    <h2>Proposed prices</h2>
+    <div class="tbl">
+      <table>
+        <thead><tr><th>Item</th><th class="num">Now</th><th class="num">New</th></tr></thead>
+        <tbody>
+          <tr class="key"><td>All sandwiches, paninis, wraps and the quesadilla</td><td class="num">$15</td><td class="num new">$17</td></tr>
+          <tr><td>Meat and Cheese Platter</td><td class="num">$19</td><td class="num new">$22</td></tr>
+          <tr><td>Nachos (pulled pork, chicken, Mexican, chili)</td><td class="num">$15</td><td class="num new">$17.50</td></tr>
+          <tr><td>Grilled Chicken Salad</td><td class="num">$15</td><td class="num new">$17</td></tr>
+          <tr><td>Other salads</td><td class="num">$13</td><td class="num new">$15</td></tr>
+          <tr><td>Veggies with Hummus</td><td class="num">$13</td><td class="num new">$15</td></tr>
+          <tr><td>Chicken Wing Dip</td><td class="num">$10</td><td class="num new">$12</td></tr>
+          <tr><td>Chips and Salsa</td><td class="num">$8</td><td class="num new">$9</td></tr>
+          <tr><td>Bavarian Pretzels</td><td class="num">$6</td><td class="num new">$7</td></tr>
+          <tr><td>BBQ Chicken and Mediterranean flatbreads</td><td class="num">$12</td><td class="num new">$14</td></tr>
+          <tr><td>Pepperoni flatbread</td><td class="num">$10</td><td class="num new">$12</td></tr>
+          <tr><td>Cheesecake, soup, small sides</td><td class="num">$8</td><td class="num new">$9</td></tr>
+          <tr><td>Side salad instead of chips</td><td class="num">+$3</td><td class="num">+$3</td></tr>
+          <tr><td>Soda, water, juice</td><td class="num">$1</td><td class="num new">$2</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">Sandwiches, wraps and the quesadilla are about half of all food sales, so the $15 → $17 change does most of the work. The top five sellers are the quesadilla, meat and cheese platter, Reuben, French Dip and pretzel.</p>
+  </section>
+
+  <section>
+    <h2>What it means in dollars (per 10 months)</h2>
+    <div class="tbl">
+      <table>
+        <thead><tr><th>If food orders…</th><th class="num">Food cost</th><th class="num">Extra profit</th></tr></thead>
+        <tbody>
+          <tr><td>Stay the same</td><td class="num">52.7%</td><td class="num new">+$35,000</td></tr>
+          <tr><td>Drop 3%</td><td class="num">52.7%</td><td class="num new">+$31,000</td></tr>
+          <tr><td>Drop 6%</td><td class="num">52.7%</td><td class="num new">+$28,000</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">Because each plate costs so much to make, we could lose about 30% of food orders and still make the same profit as today. Most guests come for the wine; food is an add-on.</p>
+  </section>
+
+  <section class="callout">
+    <h2>Lunch specials: raise to $13 or stop</h2>
+    <p>Each $15 sandwich costs about $9.10 in food and $3.50 in kitchen labor, about $12.60 total. At $10, every special loses about $2.60. The specials gave away about $4,900 in discounts from January to October.</p>
+    <p>Toast does not show the specials bringing in extra drink sales. On special days and on weekends (no specials), guests buy about $2 of drinks for every $1 of food. Monday and Thursday have the same sandwich special, but Monday lunch sold $27.2K and Thursday only $22.0K.</p>
+  </section>
+
+  <section>
+    <h2>Next steps</h2>
+    <ol>
+      <li>Board approves the new prices.</li>
+      <li>Update Toast, the printed menus and the website menu together. The website is missing some items, like Chicken Nachos and Dip Duo.</li>
+      <li>Start in the slow season so prices are set before spring.</li>
+      <li>Ask what is booked to the QuickBooks "Food" cost account. Paper goods, cleaning supplies, staff meals or event food may be in there. September was 44%, so some months may have extra costs.</li>
+      <li>Enter item costs in Toast so we can see profit for each menu item.</li>
+    </ol>
+  </section>
+
+  <footer>
+    <span>Sources: QuickBooks P&amp;L Jan–Oct 2026 (food sales $230,726, food cost $140,112); kitchen payroll summary Jan 1–Oct 30 2026 ($53,979 with employer taxes); Toast product mix and lunch (11am–3pm) sales Jan–Oct 2026; menu prices from arundelcellars.com/menu.html.</span>
+    <span>Results assume food cost stays at today's level. Kitchen labor is held flat.</span>
+  </footer>
+</div>
+</body>
+</html>
