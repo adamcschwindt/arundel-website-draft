@@ -195,3 +195,15 @@ textarea{min-height:120px}
 .age-box h2{margin-bottom:.3em}
 .age-box .btn-row{justify-content:center;margin-top:18px}
 .age-box .no{display:none;color:var(--wine);font-weight:600;margin-top:14px}
+
+/* Wine bottle gallery */
+.bottles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:16px}
+@media (min-width:860px){.bottles{grid-template-columns:repeat(8,minmax(0,1fr))}}
+.bottles figure{margin:0;background:#fff;border:1px solid var(--line);border-radius:8px;padding:8px 6px;text-align:center}
+.bottles img{width:100%;aspect-ratio:3/4;object-fit:contain}
+.bottles figcaption{font-size:.82rem;font-weight:600;margin-top:4px}
+
+/* "Then" photos on About */
+figure.then{margin:0;border-radius:var(--radius);overflow:hidden;background:#fff;border:1px solid var(--line)}
+figure.then img{width:100%;aspect-ratio:4/3;object-fit:cover}
+figure.then figcaption{padding:8px 10px;font-size:.88rem;color:var(--muted)}
