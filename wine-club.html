@@ -34,7 +34,7 @@
 
 <main>
 
-<section class="hero short" style="background-image:url('img/ig_70.jpg')">
+<section class="hero short" style="background-image:url('img/ig_77.jpg')">
   <div class="wrap">
     <h1>The Arundel Wine Club</h1>
     <p>Four of our wines, four times a year, plus member perks every time you visit. No fee to join. Cancel anytime.</p>
@@ -44,25 +44,46 @@
 
 <section class="section" id="clubs">
   <div class="wrap">
-    <div class="note"><strong>Draft note:</strong> Join buttons go to the Vinoshipper shop for now. Change them to each club's Vinoshipper sign-up link. Prices and perks follow the wine club plan; change them if the board changes the plan.</div>
+    <div class="offer">
+      <div class="offer-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="9" width="17" height="11" rx="1"/><path d="M2.5 9h19M12 9v11"/><path d="M12 9C9 9 7 7.5 7.5 5.5S11 5 12 9zM12 9c3 0 5-1.5 4.5-3.5S13 5 12 9z"/></svg></div>
+      <div>
+        <p class="eyebrow">Founding Member offer</p>
+        <p class="offer-text">Join by <b>February 1, 2027</b> and get a <b>free bottle</b> with your first shipment.</p>
+        <span class="ph">[PLACEHOLDER – board to approve]</span>
+      </div>
+    </div>
+
     <div class="center"><h2>Pick your club</h2>
     <p class="lead">Every shipment has 4 bottles. Choose your own wines, or let us pick for you. Pick them up at a members' party or have them shipped.</p></div>
     <div class="grid two" style="margin-top:24px">
       <div class="tier">
+        <div class="tier-bottles"><img src="img/wines/blossom.jpg" alt="Blossom bottle"><img src="img/wines/wild-child.jpg" alt="Wild Child bottle"><img src="img/wines/young-love.jpg" alt="Young Love bottle"></div>
         <h3>Sweet Club</h3>
         <p class="tag">Our sweet and semi-sweet wines</p>
         <p class="price">about $47 <small>/ shipment</small></p>
         <ul class="ticks"><li>4 bottles each shipment</li><li>February, May, August, November</li><li>10% below tasting room prices</li><li>All member perks below</li></ul>
-        <a class="btn" href="https://vinoshipper.com/shop/arundel_cellars_brewing_co" target="_blank" rel="noopener">Join the Sweet Club</a>
+        <a class="btn" data-join href="https://vinoshipper.com/shop/arundel_cellars_brewing_co" target="_blank" rel="noopener">Join the Sweet Club</a>
       </div>
       <div class="tier dry">
+        <div class="tier-bottles"><img src="img/wines/noiret.jpg" alt="Noiret bottle"><img src="img/wines/handsome-cab.jpg" alt="Handsome Cab bottle"><img src="img/wines/riesling.jpg" alt="Riesling bottle"></div>
         <h3>Dry Club</h3>
         <p class="tag">Our dry reds and whites</p>
         <p class="price">about $65–75 <small>/ shipment</small></p>
         <ul class="ticks"><li>4 bottles each shipment</li><li>February, May, August, November</li><li>10% below tasting room prices</li><li>All member perks below</li></ul>
-        <a class="btn gold" href="https://vinoshipper.com/shop/arundel_cellars_brewing_co" target="_blank" rel="noopener">Join the Dry Club</a>
+        <a class="btn gold" data-join href="https://vinoshipper.com/shop/arundel_cellars_brewing_co" target="_blank" rel="noopener">Join the Dry Club</a>
       </div>
     </div>
+    <p class="center" style="margin-top:10px;color:var(--muted);font-size:.85rem">Bottles shown are examples. <span class="ph">[PLACEHOLDER: confirm which wines go in each club]</span></p>
+
+    <div class="helper">
+      <h3>Not sure which club?</h3>
+      <p>Love <b>Wild Child</b> or <b>Young Love</b>? Try the <b>Sweet Club</b>.<br>
+      Prefer <b>Chambourcin</b> or <b>Riesling</b>? Try the <b>Dry Club</b>.<br>
+      <span class="ph">[PLACEHOLDER – confirm sweet/dry styles]</span></p>
+      <p>Still not sure? Ask for a tasting flight at the bar. Our staff will help you choose.</p>
+    </div>
+
+    <div class="note" style="margin-top:24px"><strong>Draft note:</strong> Join buttons go to the Vinoshipper shop for now. <b>Plan:</b> build the Vinoshipper club sign-up form into this page (Vinoshipper Injector) instead of linking out, so sign-ups from each bartender's QR link can be counted for the staff leaderboard.</div>
   </div>
 </section>
 
@@ -70,12 +91,12 @@
   <div class="wrap">
     <div class="center"><h2>Member perks</h2><p class="lead">Good every time you visit, all year.</p></div>
     <div class="grid three" style="margin-top:24px">
-      <div class="perk"><div class="icon">&#127863;</div><h3>Free flight for two</h3><p>A free tasting flight for you and one guest on every visit.</p></div>
-      <div class="perk"><div class="icon">&#127870;</div><h3>10% off bottles</h3><p>Save on every bottle you buy, in the tasting room or online.</p></div>
-      <div class="perk"><div class="icon">&#127881;</div><h3>Pickup parties</h3><p>A members' party each quarter with food, music, and new releases.</p></div>
-      <div class="perk"><div class="icon">&#11088;</div><h3>First access</h3><p>Be first to try barrel-aged and limited wines.</p></div>
-      <div class="perk"><div class="icon">&#127915;</div><h3>Event savings</h3><p>Member pricing on tickets for Arundel events.</p></div>
-      <div class="perk"><div class="icon">&#127866;</div><h3>Mug Club bonus</h3><p>Join both clubs and save on your Mug Club membership.</p></div>
+      <div class="perk"><div class="icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h4l-.5 5a1.5 1.5 0 0 1-3 0z"/><path d="M6 10.5V18M4.5 18h3"/><path d="M10 4h4l-.5 5a1.5 1.5 0 0 1-3 0z"/><path d="M12 10.5V18M10.5 18h3"/><path d="M16 4h4l-.5 5a1.5 1.5 0 0 1-3 0z"/><path d="M18 10.5V18M16.5 18h3"/><path d="M3 21h18"/></svg></div><h3>Free flight for two</h3><p>A free tasting flight for you and one guest on every visit.</p></div>
+      <div class="perk"><div class="icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12V4h8l10 10-8 8z"/><circle cx="7.5" cy="8.5" r="1.3"/><path d="M10 16l6-6"/></svg></div><h3>10% off bottles</h3><p>Save on every bottle you buy, in the tasting room or online.</p></div>
+      <div class="perk"><div class="icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="8" r="2.5"/><circle cx="16" cy="8" r="2.5"/><path d="M3.5 19a4.5 4.5 0 0 1 9 0M11.5 19a4.5 4.5 0 0 1 9 0"/></svg></div><h3>Pickup parties</h3><p>A members' party each quarter with food, music, and new releases.</p></div>
+      <div class="perk"><div class="icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.8.8-4.2 4.1 1 5.8L12 16.8l-5.2 2.7 1-5.8-4.2-4.1 5.8-.8z"/></svg></div><h3>First access</h3><p>Be first to try barrel-aged and limited wines.</p></div>
+      <div class="perk"><div class="icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8V6h18v2a2 2 0 0 0 0 4v2a2 2 0 0 0 0 4v0H3v-4a2 2 0 0 0 0-4z" transform="translate(0 -1)"/><path d="M14 6v12" stroke-dasharray="2 2"/></svg></div><h3>Event savings</h3><p>Member pricing on tickets for Arundel events.</p></div>
+      <div class="perk"><div class="icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 6h10v12a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2z"/><path d="M15 9h2.5a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H15"/><path d="M8 9v8M11.5 9v8"/></svg></div><h3>Mug Club bonus</h3><p>Join both clubs and save on your Mug Club membership.</p></div>
     </div>
   </div>
 </section>
@@ -89,6 +110,17 @@
       <div class="step"><h3>Pick up or ship</h3><p>Come to the members' party, pick up any time, or have it shipped to you.</p></div>
     </div>
     <p class="center" style="margin-top:12px">Next pickup party: <span class="ph">[PLACEHOLDER: date and time]</span></p>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="cta" style="background-image:linear-gradient(rgba(74,20,32,.84),rgba(74,20,32,.84)),url('img/ig_78.jpg')">
+      <p class="eyebrow" style="color:#f5d9a4">Holiday gift idea</p>
+      <h2>Give it as a gift</h2>
+      <p>A Wine Club membership is a gift they will enjoy all year. Ask at the bar, or call us at <b>814-725-1079</b>.</p>
+      <div class="btn-row"><a class="btn gold" href="tel:+18147251079">Call 814-725-1079</a><a class="btn ghost" href="visit.html">Visit Us</a></div>
+    </div>
   </div>
 </section>
 
@@ -110,13 +142,18 @@
       <h2>Ready to join?</h2>
       <p>Sign up online, or ask any of our staff on your next visit.</p>
       <div class="btn-row">
-        <a class="btn gold" href="https://vinoshipper.com/shop/arundel_cellars_brewing_co" target="_blank" rel="noopener">Join the Sweet Club</a>
-        <a class="btn gold" href="https://vinoshipper.com/shop/arundel_cellars_brewing_co" target="_blank" rel="noopener">Join the Dry Club</a>
+        <a class="btn gold" data-join href="https://vinoshipper.com/shop/arundel_cellars_brewing_co" target="_blank" rel="noopener">Join the Sweet Club</a>
+        <a class="btn gold" data-join href="https://vinoshipper.com/shop/arundel_cellars_brewing_co" target="_blank" rel="noopener">Join the Dry Club</a>
       </div>
     </div>
     <p class="center" style="margin-top:16px;color:var(--muted);font-size:.9rem">Prices are about 10% below tasting room prices and change with the wines in each shipment. PA sales tax applies. Shipping is extra. Must be 21+.</p>
   </div>
 </section>
+<script>
+// Bartender QR codes add ?utm_source=...&utm_campaign=<name>. Keep those tags on the Join links.
+(function(){var q=new URLSearchParams(location.search),t=[];q.forEach(function(v,k){if(k.indexOf('utm_')===0)t.push([k,v])});
+if(!t.length)return;document.querySelectorAll('a[data-join]').forEach(function(a){try{var u=new URL(a.href);t.forEach(function(p){u.searchParams.set(p[0],p[1])});a.href=u.toString()}catch(e){}});})();
+</script>
 
 </main>
 
